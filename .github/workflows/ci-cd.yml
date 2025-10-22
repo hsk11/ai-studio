@@ -109,10 +109,15 @@ jobs:
         cd backend
         npm ci
         
+    - name: Create data directory
+      run: |
+        cd backend
+        mkdir -p data
+        
     - name: Run backend tests
       run: |
         cd backend
-        npm test -- --coverage --watchAll=false
+        npm test -- --coverage --watchAll=false --runInBand
         
     - name: Upload backend coverage
       uses: codecov/codecov-action@v3
