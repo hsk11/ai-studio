@@ -25,7 +25,8 @@ export const generationService = {
   createGeneration(data: CreateGenerationData): Generation {
     const { userId, prompt, style, imageFile } = data;
 
-    const shouldSimulateError = Math.random() < 0.2;
+    // Only simulate errors in non-test environments
+    const shouldSimulateError = process.env['NODE_ENV'] !== 'test' && Math.random() < 0.2;
     if (shouldSimulateError) {
       throw new Error('Model overloaded');
     }

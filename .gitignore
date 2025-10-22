@@ -17,6 +17,11 @@ dist/
 build/
 *.tsbuildinfo
 
+# Database
+backend/data/
+*.db
+*.sqlite
+*.sqlite3
 
 # Logs
 logs/
@@ -24,4 +29,20 @@ logs/
 
 # IDE
 .vscode/
-frontend
+.idea/
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+cypress/videos/
+cypress/screenshots/
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*.stackdump
+*.swp
